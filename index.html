@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>newtab</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="icon.jpg">
+	</head>
+
+<body>
+	<div id="clock">00:00:00</div>
+	<div class="search-container">
+		<input type="text" placeholder="Search.." id="searchBar" autofocus>
+		<img src="logo.png" class="search-icon">
+	</div>
+
+	<div id="shortcuts">
+		<div class="shortcut add-btn" id="addShortcutBtn">
+			<div class="add-icon">+</div>
+			<p>Add</p>
+		</div>
+	</div>
+
+	<div id="addModal" style="display:none;">
+		<div class="modal-box">
+			<h3>New shortcut</h3>
+			<input type="text" id="shortcutName" placeholder="Name (e.g. YouTube)" maxlength="12">
+			<input type="text" id="shortcutUrl" placeholder="URL (e.g. youtube.com)">
+			<div class="icon-section">
+				<p class="icon-label">Custom icon (optional)</p>
+				<div class="icon-preview-row">
+					<img id="addIconPreview" src="" alt="preview" style="display:none;">
+					<div class="icon-inputs">
+						<div class="icon-url-row">
+							<input type="text" id="addIconUrl" placeholder="Paste URL or base64...">
+							<button class="apply-btn" id="applyAddIconBtn">Apply</button>
+						</div>
+						<label class="file-upload-btn">
+							📁 Upload file
+							<input type="file" id="addIconFile" accept="image/*" style="display:none;">
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="modal-buttons">
+				<button id="saveShortcutBtn">Add</button>
+				<button id="closeAddModalBtn">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="editModal" style="display:none;">
+		<div class="modal-box">
+			<h3>Edit shortcut</h3>
+			<input type="text" id="editName" placeholder="Name" maxlength="12">
+			<input type="text" id="editUrl" placeholder="URL">
+			<div class="icon-section">
+				<p class="icon-label">Change icon (optional)</p>
+				<div class="icon-preview-row">
+					<img id="editIconPreview" src="" alt="preview" style="display:none;">
+					<div class="icon-inputs">
+						<div class="icon-url-row">
+							<input type="text" id="editIconUrl" placeholder="Paste URL or base64...">
+							<button class="apply-btn" id="applyEditIconBtn">Apply</button>
+						</div>
+						<label class="file-upload-btn">
+							📁 Upload file
+							<input type="file" id="editIconFile" accept="image/*" style="display:none;">
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="modal-buttons">
+				<button id="saveEditBtn">Save</button>
+				<button id="closeEditModalBtn">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="settings-container">
+		<input type="text" id="bgInput" placeholder="Link to custom BG">
+		<button class="settings-btn" id="settingsBtn">⚙</button>
+	</div>
+
+	<audio id="hoverSound" src="hover.wav" preload="auto"></audio>
+	<audio id="clickSound" src="click.wav" preload="auto"></audio>
+
+	<script src="redirect.js" defer></script>
+</body>
+</html>
